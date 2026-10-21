@@ -16,7 +16,7 @@ Content-Type: application/json
     "is_active": true
 }
 ###
-GET http://127.0.0.1:8000/questions/3/
+GET http://127.0.0.1:8000/questions/2/
 Accept: application/json
 
 ###
@@ -35,3 +35,51 @@ Content-Type: application/json
 }
 ###
 DELETE http://127.0.0.1:8000/questions/3/
+
+###
+
+GET http://127.0.0.1:8000/submissions/
+Accept: application/json
+
+
+
+
+
+###
+POST http://127.0.0.1:8000/submissions/
+Content-Type: application/json
+
+
+{
+    "question_id": 1,
+    "answer": "demo",
+    "owner": "Tony",
+    "remarks": "Good answer"
+}
+
+
+###
+GET http://127.0.0.1:8000/submissions/1/
+Accept: application/json
+
+
+#it us used if the question 1 is there only answer must must be submiited otherwise not submitt
+###
+POST http://127.0.0.1:8000/submissions/
+Content-Type: application/json
+
+{
+    "question_id": 1,
+    "answer": "Factorial of 5 is 120",
+    "owner": "Ragendhu"
+
+}
+
+###
+PUT http://127.0.0.1:8000/submissions/2/evaluate/
+Content-Type: application/json
+
+{
+    "points": 2,
+    "remarks": "Below average in coding"
+}
